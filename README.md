@@ -20,15 +20,15 @@
 
 ## 百度网盘不限速下载工具
 
-未失效方法如下，更新时间：**2025年5月16日**
+未失效方法如下，更新时间：**2025年6月26日**
 
 ### 在线解析网站
 
-获取 [文武Pandownload](https://pandown.wangdu.site/) 的验证码（一次付费，无限制获取验证码，解析次数不变；或者 [购买月卡](https://fk.wwkejishe.top/buy/23)（可正常购买，还可使用[（高质量）网盘会员](http://vip.jiufei.com/lin/GI5LG4?refer=1661)）：不限制大小、下载不限速度、不限制解析次数，最快可达 10M+/s）
+获取 [文武Pandownload](https://pandown.wangdu.site/) 的验证码（一次付费，无限制获取验证码，解析次数不变；或者 [购买月卡](https://fk.wwkjs.top/buy/23)（[备用地址](https://fk.wangdu.site/buy/23) 可正常购买，还可使用[（高质量）网盘会员](http://vip.jiufei.com/lin/GI5LG4?refer=1661)）：不限制大小、下载不限速度、不限制解析次数，最快可达 10M+/s）
 
 [点击获取验证码](https://www.wangdu.site/software/tools/948.html)
 
-- [文武Pandownload](https://pandown.wangdu.site/)（[油猴脚本地址](https://greasyfork.org/zh-CN/scripts/518023-%E6%96%87%E6%AD%A6download-%E7%9B%B4%E9%93%BE%E7%9A%84%E4%BA%91%E7%9B%98%E5%8A%A9%E6%89%8B)（[国内加速地址](https://cn-greasyfork.org/zh-CN/scripts/518023-%E6%96%87%E6%AD%A6download-%E7%9B%B4%E9%93%BE%E7%9A%84%E4%BA%91%E7%9B%98%E5%8A%A9%E6%89%8B)） 搭配百度网盘官网效果更佳、文件单个大小不得超过 3G、[Github开源地址](https://github.com/dongyubin/Baidu-VIP)，百度网盘不限速解析网盘，使用SVIP账号解析），下载速度 10M+/s（[购买月卡](https://fk.wwkejishe.top/buy/23)（在维护中，暂时下架，可使用[（高质量）网盘会员](http://vip.jiufei.com/lin/GI5LG4?refer=1661)）：不限制大小、速度，最快可达 10M+/s）百度网盘下载如何加速？ [Gopeed下载使用教程](https://flowus.cn/share/c68e3c55-67e5-460f-b937-7727e0378a34?code=BCRWJL)
+- [文武Pandownload](https://pandown.wangdu.site/)（[油猴脚本地址](https://greasyfork.org/zh-CN/scripts/518023-%E6%96%87%E6%AD%A6download-%E7%9B%B4%E9%93%BE%E7%9A%84%E4%BA%91%E7%9B%98%E5%8A%A9%E6%89%8B)（[国内加速地址](https://cn-greasyfork.org/zh-CN/scripts/518023-%E6%96%87%E6%AD%A6download-%E7%9B%B4%E9%93%BE%E7%9A%84%E4%BA%91%E7%9B%98%E5%8A%A9%E6%89%8B)） 搭配百度网盘官网效果更佳、文件单个大小不得超过 3G、[Github开源地址](https://github.com/dongyubin/Baidu-VIP)，百度网盘不限速解析网盘，使用SVIP账号解析），下载速度 10M+/s（ [购买月卡](https://fk.wwkjs.top/buy/23)（还可使用[（高质量）网盘会员](http://vip.jiufei.com/lin/GI5LG4?refer=1661)）：不限制大小、速度，最快可达 10M+/s）百度网盘下载如何加速？ [Gopeed下载使用教程](https://flowus.cn/share/c68e3c55-67e5-460f-b937-7727e0378a34?code=BCRWJL)
 
   ![文武Pandownload下载速度展示](https://cdn.wwkejishe.top/wp-cdn-02/2024/202411171326300.webp)
 
@@ -41,6 +41,7 @@
 ### 付费下载
 
 - [点击购买（高质量）网盘会员](http://vip.jiufei.com/lin/GI5LG4?refer=1661)：￥3/4天，￥7.5/25天，￥27.8/年（推荐）
+- [文武Pandownload月卡](https://fk.wangdu.site/buy/23)
 - PDD 搜：百度网盘
 - 闲鱼 搜：百度
 
