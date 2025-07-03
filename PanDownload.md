@@ -1,7 +1,5 @@
 # 文武PanDownload
 
-🛒网盘极速下载VIP账号：[立即前往](https://fk.wwkjs.top/buy/23)（[备用地址](https://fk.wangdu.site/buy/23)）
-
 [百度网盘稳定解析方式](https://flowus.cn/wwkejishe/share/9e5a3fa4-a9eb-4706-9cf0-8eec0d4740c1)
 
 Github By [@dongyubin](https://github.com/dongyubin/Baidu-VIP)
@@ -26,7 +24,7 @@ Extract single file high-speed direct link, convenient to use script assistant, 
 
 本脚本需要下载网盘获取`解析密码`才能解锁全部功能，本脚本中可能包含`不受欢迎的弹窗广告`，请看清楚再用！！！
 
-[获取临时 SVIP 账号](https://fk.wwkejishe.top/buy/23)、[获取解析验证码](https://www.wangdu.site/software/tools/948.html)
+[获取解析验证码](https://www.wangdu.site/software/tools/948.html)
 
 ## 渲染界面 / Rendering interface
 
