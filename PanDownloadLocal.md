@@ -1,6 +1,6 @@
 # 文武直链助手
 
-🛒网盘极速下载VIP账号：[立即前往](https://fk.wwkejishe.top/buy/23)（在维护中，暂时下线）
+🛒网盘极速下载VIP账号：[立即前往](https://fk.wangdu.site/buy/23)（[备用地址](https://fk.wwkjs.top/buy/23)）
 
 [百度网盘稳定解析方式](https://flowus.cn/wwkejishe/share/9e5a3fa4-a9eb-4706-9cf0-8eec0d4740c1)
 
@@ -10,13 +10,13 @@ Github By [@dongyubin](https://github.com/dongyubin/Baidu-VIP)
 
 ## 概述 / Overview
 
-只支持在 [文武Download网页版](https://pandown.wangdu.site/) 使用，不支持在百度网盘网页端使用。
+只支持在 [文武Download网页版](https://pandown.wangdu.site/) 使用，不支持在百度网盘网页端使用，搭配  [Gopeed](https://pan.quark.cn/s/0b2e9c6e94b0)（[Gopeed 使用教程](https://flowus.cn/wwkejishe/share/c68e3c55-67e5-460f-b937-7727e0378a34?code=BCRWJL)） 使用。
 
 ## 特别提示 / hot tip
 
 网页需要下载网盘获取`解析密码`才能解锁全部功能，请看清楚再用！！！
 
-[获取临时 SVIP 账号](https://fk.wwkejishe.top/buy/23)（在维护中，暂时下线）、[获取解析验证码](https://www.wangdu.site/software/tools/948.html)
+[获取临时 SVIP 账号](https://fk.wangdu.site/buy/23)（[备用地址](https://fk.wwkjs.top/buy/23)）、[获取解析验证码](https://www.wangdu.site/software/tools/948.html)
 
 ## 渲染界面 / Rendering interface
 
