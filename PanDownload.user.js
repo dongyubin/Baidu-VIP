@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name              2025最新可用-百度网盘SVIP高速解析直链的不限速下载助手-文武PanDownload
 // @namespace         https://github.com/dongyubin/Baidu-VIP
-// @version           7.3
-// @description       2025年3月持续更新可用，不限制速度的百度网盘SVIP解析高速直链的脚本助手，无视黑号，100%可用，不限制文件大小，下载速度最快可达10M+/s，支持 Gopeed（一键解析）、IDM、NDM 等多线程极速下载工具，支持 Google Chrome、Microsoft Edge、Firefox 等浏览器。
+// @version           8.7
+// @description       2025年8月持续更新可用，不限制速度的百度网盘SVIP解析高速直链的脚本助手，无视黑号，100%可用，不限制文件大小，下载速度最快可达10M+/s，支持 Gopeed（一键解析）、IDM、NDM 等多线程极速下载工具，支持 Google Chrome、Microsoft Edge、Firefox 等浏览器。
 // @author            dongyubin
 // @homepage          https://fk.wwkejishe.top/buy/23
 // @supportURL        https://fk.wwkejishe.top/buy/23
@@ -28,7 +28,7 @@
 // @match             *://pan.baidu.com/share/*
 // @match             *://yun.baidu.com/share/*
 // @match             *://openapi.baidu.com/*
-// @connect           api.aifenxiang.net.cn
+// @connect           api.gssource.com
 // @connect           baidu.com
 // @connect           *
 // @connect           127.0.0.1
@@ -41,6 +41,7 @@
 // @grant             GM_info
 // @grant             GM_getValue
 // @grant             GM_setValue
+// @grant             GM_deleteValue
 // @antifeature       ads
 // @antifeature       membership
 // @antifeature       referral-link
@@ -58,21 +59,23 @@
       list-style: normal !important;
     }
   `);
+  let randomNum = Math.floor(Math.random() * 9999);
   const wwConfig = {
-    mainUrl: 'https://api.aifenxiang.net.cn',
+    mainUrl: 'https://api.gssource.com',
+    vipUrl: 'https://vipan.wangdu.site/login.php',
     bdPassword: '1234',
     titleName: '文武PanDownload',
     goPeedTaskUrl: 'http://127.0.0.1:9999/api/v1/tasks',
     one_parse: {
-      code: '1.1.2',
-      version: '1.1.4'
+      code: `${randomNum}`,
+      version: '1.0.9'
     },
     wx_parse: {
       version: "1.0.9"
     },
     gopeed: {
       name: 'GoPeed',
-      url: 'https://pan.quark.cn/s/0b2e9c6e94b0'
+      url: ''
     },
     ndm: {
       name: 'NDM',
@@ -95,24 +98,25 @@
     monthCard: 'http://vip.jiufei.com/lin/GI5LG4?refer=1661',
     wechatCode: '验证码',
     debug_link: 'https://github.com/dongyubin/Baidu-VIP/issues',
-    authorWechat: 'dyb54188',
     help_document: 'https://flowus.cn/share/c68e3c55-67e5-460f-b937-7727e0378a34?code=BCRWJL'
   };
 
-  const danger_info = `<p style="font-weight:900; text-align: center;">请更新到最新版本再使用，优先选择 <a style="color:red;" target="_blank"
-            href="`+ wwConfig.liulanqi.chrome + `">Google Chrome 浏览器</a> </p>
+  const danger_info = `
             <p style="font-weight:900;">
-              ⚠️❗ 一定要先配置好 <a href="`+ wwConfig.gopeed.url + `" target="_blank" style="font-weight: 900;color: #409eff;">` + wwConfig.gopeed.name + `</a> 下载器的 User-Agent、端口、连接数: <a style="color:red;" target="_blank"
-                href="`+ wwConfig.help_document + `">点击查看 Gopeed 配置教程说明</a>
+              ⚠️❗ 必须搭配 <a href="`+ wwConfig.gopeed.url + `" target="_blank" style="font-weight: 900;color: #409eff;">` + wwConfig.gopeed.name + `</a> 下载器使用（否则无法下载）<br/>
+                  <a style="color: #409eff;" target="_blank" href="` + wwConfig.help_document + `">点击查看 Gopeed 配置教程说明</a>
+            </p>
+            <p style="font-weight:900; text-align: center;">
+              优先选择<a style="color:red;" target="_blank" href="`+ wwConfig.liulanqi.chrome + `">Google Chrome 浏览器</a>+<a style="color:red;" target="_blank" href="https://violentmonkey.github.io/">暴力猴</a>（暂不支持：篡改猴测试版）（部分校园网可能不支持解析）
             </p>
             <p>
-              不限次数 PC 网页稳定版:
-              <a style="color:red;font-weight:900;" target="_blank"
-                href="https://pandown.wangdu.site/">点击前往</a>
+              免费不易，获取验证码需要看广告，希望理解。
             </p>
             <p>
-              部分校园网可能不支持解析
-            </p>`;
+              <a style="color:red;font-weight:900;" target="_blank" href="https://flowus.cn/wwkejishe/share/9e5a3fa4-a9eb-4706-9cf0-8eec0d4740c1">点击跳转百度网盘稳定解析方式</a>（点击跳转：<a style="color: green;font-weight:900;" target="_blank"
+                    href="https://www.wangdu.site/software/tools/948.html">免广告无限制获取验证码</a>）
+            </p>
+            `;
 
   const pandownload_info = `<li>
               <a href="https://pandown.wangdu.site/vip/login" target="_blank"
@@ -128,6 +132,31 @@
                   <a href="`+ wwConfig.pandown.life + `" target="_blank"
                     style="color: #007bff; text-decoration: none;">永久卡</a>
                 </li>`;
+  const free_tab_info = `<div class="layui-tab-item">
+                <div class="layui-form" lay-filter="filter-test-layer"
+                  style="width:360px;margin: 16px auto 0; background-color: #fff; border-radius: 8px; padding: 20px;">
+                  <div class="demo-send-container">
+                    <div class="layui-text">
+                      <p>插件解析免费 <span style="font-weight:600;">2</span> 次</p>
+                      <p>（提示：解析次数已达上限，代表失效，静等更新。）</p>
+                      <p>如果失效，请使用<strong>验证码解析</strong></p>
+                      `+ danger_info + `
+                    </div>
+                    <div class="layui-btn-container">
+                      <button style="margin-top:30px; border-radius: 8px;" id="gopeedSetBtn"
+                        class="layui-btn layui-btn-fluid layui-bg-red" lay-submit lay-filter="gopeed-set">1️⃣
+                        Gopeed设置教程</button>
+                        <!--
+                      <button style="margin-top:10px; border-radius: 8px;" id="copyUaBtn"
+                        class="layui-btn layui-btn-fluid layui-bg-orange" lay-submit lay-filter="copy-ua">2️⃣
+                        复制User-Agent</button>
+                        -->
+                      <button style="margin-left:0;margin-top:10px; border-radius: 8px;" id="parseBtn"
+                        class="layui-btn layui-btn-fluid" lay-submit lay-filter="demo-send">2️⃣ 发送到Gopeed</button>
+                    </div>
+                  </div>
+                </div>
+              </div>`
 
   layui.use(['layer'], async function () {
     var layer = layui.layer,
@@ -195,95 +224,93 @@
         anim: 0,
         content: `
           <div class="layui-tab layui-tab-brief" style="background-color: #f8f8f8; border-radius: 8px;">
-    <ul class="layui-tab-title" style="background-color: #fff; border-bottom: 1px solid #e6e6e6;">
-      <li class="layui-this">验证码解析</li>
-      <li>免费解析</li>
-      <li>防止失联</li>
-      <li>常见问题反馈</li>
-    </ul>
-    <div class="layui-tab-content" style="padding: 20px;">
-      <div class="layui-tab-item layui-show" style="background-color: #fff; border-radius: 8px; padding: 20px;text-align: center;">
-        `+ danger_info + `
-        <div>
-          <img src="https://cdn.wwkejishe.top/wp-cdn-02/2024/202411171346351.webp" style="width:200px;height:200px;">
-        </div>
-        <h2 class="h2" style="margin-top: 10px;">获取验证码：扫描二维码，复制下面口令并发送</h2>
-        <div>每天总共随机解析5-10次，使用完则提示：今日下载次数已达上限（<a style="color: red;font-weight:900;" target="_blank"
-            href="https://www.wangdu.site/software/tools/948.html">无限制获取验证码</a>）
-        </div>
-        <div>
-          <input type="text" name="captcha" id="captcha" value="" lay-verify="required" placeholder="请填写验证码"
-            lay-reqtext="请填写验证码" autocomplete="off" class="layui-input" lay-affix="clear">
-        </div>
-        <button style="margin-top:30px; border-radius: 8px;" id="copyWechatBtn"
-                class="layui-btn layui-btn-fluid layui-bg-red" lay-submit lay-filter="gopeed-set">1️⃣
-                复制微信口令</button>
-        <button style="margin-left:0;margin-top:10px; border-radius: 8px;" id="parseWxBtn"
-          class="layui-btn layui-btn-fluid" lay-submit lay-filter="demo-wx-send">2️⃣ 发送到Gopeed</button>
-      </div>
-      <div class="layui-tab-item">
-        <div class="layui-form" lay-filter="filter-test-layer"
-          style="width:360px;margin: 16px auto 0; background-color: #fff; border-radius: 8px; padding: 20px;">
-          <div class="demo-send-container">
-            <div class="layui-text">
-              <p>插件解析免费 <span style="font-weight:600;">2</span> 次</p>
-              <p>（提示：解析次数已达上限，代表失效，静等更新。）</p>
-              <p>如果失效，请使用<strong>验证码解析</strong></p>
-              `+ danger_info + `
-            </div>
-            <div class="layui-btn-container">
-              <button style="margin-top:30px; border-radius: 8px;" id="gopeedSetBtn"
-                class="layui-btn layui-btn-fluid layui-bg-red" lay-submit lay-filter="gopeed-set">1️⃣
-                Gopeed设置教程</button>
-                <!--
-              <button style="margin-top:10px; border-radius: 8px;" id="copyUaBtn"
-                class="layui-btn layui-btn-fluid layui-bg-orange" lay-submit lay-filter="copy-ua">2️⃣
-                复制User-Agent</button>
-                -->
-              <button style="margin-left:0;margin-top:10px; border-radius: 8px;" id="parseBtn"
-                class="layui-btn layui-btn-fluid" lay-submit lay-filter="demo-send">2️⃣ 发送到Gopeed</button>
+            <ul class="layui-tab-title" style="background-color: #fff; border-bottom: 1px solid #e6e6e6;">
+              <li class="layui-this">验证码解析</li>
+              <li>免费解析</li>
+              <li>防止失联</li>
+              <li>常见问题反馈</li>
+            </ul>
+            <div class="layui-tab-content" style="padding: 20px;">
+              <div class="layui-tab-item layui-show" style="background-color: #fff; border-radius: 8px; padding: 20px;text-align: center;">
+                `+ danger_info + `
+                <div>
+                  <img src="https://vipan.wangdu.site/wxgzh.webp" style="width:200px;height:200px;" alt="微信公众号">
+                </div>
+                <h2 class="h2" style="margin-top: 10px;">微信扫描二维码，发送关键词：验证码</h2>
+
+                <div class="layui-input-group">
+                  <div class="layui-input-split layui-input-prefix">微信口令验证码：</div>
+                    <input type="text" name="captcha" id="captcha" value="" lay-verify="required" placeholder="请填写口令获取的验证码"
+                      lay-reqtext="请填写验证码" autocomplete="off" class="layui-input" lay-affix="clear">
+                </div>
+                <!--<div id="captchaContainer" style="margin:20px 0"></div>
+                <button style="margin-top:30px; border-radius: 8px;" id="copyWechatBtn"
+                        class="layui-btn layui-btn-fluid layui-bg-red" lay-submit lay-filter="gopeed-set">1️⃣
+                        复制微信口令</button>
+                 <button style="margin-left:0;margin-top:10px; border-radius: 8px;" id="parseWxBtn"
+                  class="layui-btn layui-btn-fluid" lay-submit lay-filter="demo-wx-send">2️⃣ 发送到Gopeed</button> -->
+                <button style="margin-left:0;margin-top:10px; border-radius: 8px;" class="layui-btn layui-btn-fluid" id="submitStableCaptcha">发送到Gopeed</button>
+                <button style="margin-left:0;margin-top:10px; border-radius: 8px;" class="layui-btn layui-btn-fluid" id="clearCache">清理缓存</button>
+              </div>
+              `+free_tab_info+`
+              <div class="layui-tab-item" style="background-color: #fff; border-radius: 8px; padding: 20px;text-align: center;">
+                <div>
+                  <img src="https://vipan.wangdu.site/wxgzh.webp" style="width:240px;height:240px;" alt="微信公众号">
+                </div>
+                <h2 class="h2" style="margin-top: 10px;">扫一扫，不失联</h2>
+                <h3 class="h2" style="margin-top: 10px;">众所周知，脚本不可能每时每刻都能用。关注不迷路 ~</h3>
+              </div>
+              <div class="layui-tab-item" style="background-color: #fff; border-radius: 8px; padding: 20px;">
+                <p class="layui-text">
+                常见问题文档： <a style="color:red;" target="_blank"
+                    href="`+ wwConfig.help_document + `">点击查看常见问题</a>（能够解决80%的问题）
+                </p>
+                <p>
+                好用的话，请给个好评，带上截图就更好了！<a href="https://greasyfork.org/zh-CN/scripts/518023-%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98svip%E9%AB%98%E9%80%9F%E8%A7%A3%E6%9E%90%E7%9B%B4%E9%93%BE%E7%9A%84%E4%B8%8D%E9%99%90%E9%80%9F%E4%B8%8B%E8%BD%BD%E5%8A%A9%E6%89%8B-%E6%96%87%E6%AD%A6pandownload/feedback" target="_blank" style="color: #007bff; text-decoration: none;">点击前往</a>
+                </p>
+                <p class="layui-text">
+                  有问题请带图反馈，我会尽快修复！
+                </p>
+                <h2>常见问题</h2>
+                <p class="layui-text">
+                  1、Edge 浏览器 一直显示解析中 / 无法发送到gopeed / 多次提示：验证码错误<br/>
+                  答：尝试使用 <a style="color:red;" target="_blank"
+                    href="`+ wwConfig.liulanqi.chrome + `">Google Chrome 浏览器</a>
+                </p>
+                <p class="layui-text">
+                2、 提示：免费次数已用完<br/>
+                答：请明天再试，第二天重置次数
+                </p>
+                <p class="layui-text">
+                3、 无法获取验证码<br/>
+                答：切换网络试试
+                </p>
+                <div class="layui-btn-container">
+                  <button style="margin-top:10px; border-radius: 8px;" id="goIssues"
+                        class="layui-btn layui-btn-fluid layui-bg-red" lay-submit lay-filter="gopeed-set">点击前往提交issues</button>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
-      <div class="layui-tab-item" style="background-color: #fff; border-radius: 8px; padding: 20px;text-align: center;">
-        <div>
-          <img src="https://cdn.wwkejishe.top/wp-cdn-02/2024/202411171346351.webp" style="width:240px;height:240px;">
-        </div>
-        <h2 class="h2" style="margin-top: 10px;">扫一扫，不失联</h2>
-        <h3 class="h2" style="margin-top: 10px;">众所周知，脚本不可能每时每刻都能用。关注不迷路 ~</h3>
-      </div>
-      <div class="layui-tab-item" style="background-color: #fff; border-radius: 8px; padding: 20px;">
-        <p class="layui-text">
-        常见问题文档： <a style="color:red;" target="_blank"
-            href="`+ wwConfig.help_document + `">点击查看常见问题</a>（能够解决80%的问题）
-        </p>
-        <p>
-        好用的话，请给个好评，带上截图就更好了！<a href="https://greasyfork.org/zh-CN/scripts/518023-%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98svip%E9%AB%98%E9%80%9F%E8%A7%A3%E6%9E%90%E7%9B%B4%E9%93%BE%E7%9A%84%E4%B8%8D%E9%99%90%E9%80%9F%E4%B8%8B%E8%BD%BD%E5%8A%A9%E6%89%8B-%E6%96%87%E6%AD%A6pandownload/feedback" target="_blank" style="color: #007bff; text-decoration: none;">点击前往</a>
-        </p>
-        <p class="layui-text">
-          有问题请带图反馈，我会尽快修复！
-        </p>
-        <h2>常见问题</h2>
-        <p class="layui-text">
-          1、Edge 浏览器 一直显示解析中 / 无法发送到gopeed / 多次提示：验证码错误<br/>
-          答：尝试使用 <a style="color:red;" target="_blank"
-            href="`+ wwConfig.liulanqi.chrome + `">Google Chrome 浏览器</a>
-        </p>
-        <div class="layui-btn-container">
-          <button style="margin-top:10px; border-radius: 8px;" id="goIssues"
-                class="layui-btn layui-btn-fluid layui-bg-red" lay-submit lay-filter="gopeed-set">点击前往提交issues</button>
-          <button style="margin-top:10px; border-radius: 8px;" id="copyAuthorWechat"
-                class="layui-btn layui-btn-fluid" lay-submit lay-filter="gopeed-set">
-                点击复制作者微信号</button>
-        </div>
-      </div>
-    </div>
-  </div>
         `,
         success: function () {
           // 对弹层中的表单进行初始化渲染
           form.render();
+          // 初始化稳定解析标签页的验证码
+          // loadStableCaptcha();
+          // let token = GM_getValue('token');
+          // if (!token) {
+          //   $('#captchaContainer').html(`<div class="layui-col-xs7">
+          //   <div class="layui-input-wrap">
+          //     <input type="text" id="stableCaptcha" placeholder="输入图片验证码" class="layui-input">
+          //   </div>
+          // </div>
+          // <div class="layui-col-xs5">
+          //   <div style="margin-left: 10px;">
+          //     <img id="captchaImage" style="border:1px solid #ddd;margin-bottom:10px;height:40px;cursor:pointer;">
+          //   </div>
+          // </div>`);
+          // }
           // 表单提交事件
           form.on('submit(demo-send)', async function (data) {
             $('#parseBtn').html('<p>正在发送中,请稍后...</p>');
@@ -294,8 +321,8 @@
               $('#parseBtn').html('<p>发送到Gopeed</p>');
               return;
             }
-            let one_url = wwConfig.mainUrl + '/wp/getCodeNum';
-            share_one_baidu(openInfoLayer, one_url, wwConfig.one_parse.code, wwConfig.one_parse.version, 1);
+            let one_url = wwConfig.mainUrl + '/wp/getPcCodeNum';
+            share_one_baidu(openInfoLayer, one_url, wwConfig.one_parse.code, wwConfig.one_parse.version, 3);
           });
 
           $('#parseWxBtn').on('click', async function () {
@@ -307,7 +334,6 @@
                 return;
               }
               GM_setValue('lastCaptcha', captchaStr);
-
               $('#parseWxBtn').html('<p>正在发送中,请稍后...</p>');
               let testDown = await testSendToGopeed();
               if (!testDown) {
@@ -336,8 +362,76 @@
           $('#goIssues').on('click', function () {
             openUrl(wwConfig.debug_link);
           })
-          $('#copyAuthorWechat').on('click', function () {
-            copy_text(wwConfig.authorWechat, '作者微信');
+
+          $('#clearCache').on('click', function () {
+            GM_deleteValue('token');
+            layer.msg('已清除缓存');
+            window.location.reload();
+          })
+
+          // $('#captchaImage').on('click', function () {
+          //   loadStableCaptcha();
+          // })
+
+          $('#submitStableCaptcha').on('click', async function () {
+            let captchaStr = $('#captcha').val();
+            // 图片验证码
+            // let code = $('#stableCaptcha').val();
+            // let token = GM_getValue('token');
+            // if (!token) {
+            //   if (!code) {
+            //     layer.msg('图片验证码不能为空！');
+            //     return;
+            //   }
+            // }
+            if (captchaStr) {
+              let lastCaptcha = GM_getValue('lastCaptcha', '');
+              if (captchaStr === lastCaptcha) {
+                layer.msg('口令验证码已使用，请获取新的验证码');
+                return;
+              }
+              GM_setValue('lastCaptcha', captchaStr);
+
+              // $('#parseWxBtn').html('<p>正在发送中,请稍后...</p>');
+              // let testDown = await testSendToGopeed();
+              // if (!testDown) {
+              //   layer.close(openInfoLayer);
+              //   gospeedDownload();
+              //   $('#parseWxBtn').html('<p>发送到Gopeed</p>');
+              //   return;
+              // }
+              let one_url = wwConfig.mainUrl + '/wp/getPcCodeNum';
+              // if (wwConfig.token) {
+              //   share_one_baidu(openInfoLayer, one_url, captchaStr, wwConfig.wx_parse.version, 3);
+              // } else {
+                // let uuid = GM_getValue('captcha_uuid');
+                GM_xmlhttpRequest({
+                  method: 'POST',
+                  url: `${wwConfig.vipUrl}`,
+                  headers: {
+                    'Content-Type': 'application/json',
+                  },
+                  // data: JSON.stringify({
+                  //   code: code,
+                  //   uuid: uuid
+                  // }),
+                  onload: function (response) {
+                    const data = JSON.parse(response.responseText);
+                    if (data.status === 'success') {
+                      wwConfig.token = data.token;
+                      // $('#captchaContainer').html(``);
+                      share_one_baidu(openInfoLayer, one_url, captchaStr, wwConfig.wx_parse.version, 3);
+                    } else {
+                      layer.msg(data.message);
+                      // loadStableCaptcha();
+                    }
+                  }
+                });
+              // }
+
+            } else {
+              layer.msg('请输入验证码');
+            }
           })
         },
       });
@@ -542,6 +636,9 @@
                     case 2:
                       download_url = wwConfig.mainUrl + '/wp/fast/pc/dlink';
                       break;
+                    case 3:
+                      download_url = wwConfig.mainUrl + '/wp/fast/pc/dlink';
+                      break;
                   }
                   get_down_list(
                     shorturl,
@@ -549,7 +646,8 @@
                     openInfoLayer,
                     res.data,
                     laysermsg,
-                    download_url
+                    download_url,
+                    type
                   );
                 }
                 else if (res.data == 80 || res.data.data == 80) {
@@ -592,7 +690,7 @@
     });
   }
 
-  async function get_down_list(shorturl, password, openInfoLayer, pwd, laysermsg, downloadUrl) {
+  async function get_down_list(shorturl, password, openInfoLayer, pwd, laysermsg, downloadUrl, type) {
     let ajax_data = {
       shorturl: shorturl,
       pwd: password,
@@ -600,6 +698,12 @@
       root: 1,
       userKey: 'main',
     };
+    if (type == 3) {
+      // ajax_data.dir = "1";
+      // ajax_data.index = 0;
+      // ajax_data.root = "1";
+      password = 'ymta';
+    }
 
     fetch(wwConfig.mainUrl + '/wp/parseCopyLink', {
       method: 'POST',
@@ -634,49 +738,84 @@
             pwd: password,
             dir: '/',
           };
-          // console.log(requestData);
-          GM_xmlhttpRequest({
-            method: 'POST',
-            url: downloadUrl,
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            data: JSON.stringify(requestData),
-            onload: function (response) {
-              const responseData = JSON.parse(response.responseText);
-              // console.log(responseData);
-              if (responseData.code !== 200) {
-                layer.close(openInfoLayer);
-                layer.close(laysermsg);
-                // swal({
-                //   text: responseData.msg,
-                //   icon: 'warning',
-                // });
-                init_parse(3);
-              } else {
-                layer.close(laysermsg);
-                $('#parseBtn').html('<p>发送到Gopeed</p>');
-                if (responseData.data.vip) {
+          let token = wwConfig.token;
+          if (token) {
+            GM_xmlhttpRequest({
+              method: 'POST',
+              url: downloadUrl,
+              headers: {
+                'Content-Type': 'application/json;charset=UTF-8',
+                'Authorization': 'Bearer ' + token,
+              },
+              data: JSON.stringify(requestData),
+              onload: function (response) {
+                const responseData = JSON.parse(response.responseText);
+                if (responseData.code !== 200) {
+                  layer.close(openInfoLayer);
+                  layer.close(laysermsg);
+                  init_parse(3);
+                } else {
+                  layer.close(laysermsg);
                   wwConfig.url = responseData.data.data.dlink;
                   wwConfig.ua = responseData.data.data.ua;
-                } else {
-                  wwConfig.url = responseData.data.dlink;
-                  wwConfig.ua = responseData.data.ua;
+                  sendToGopeed(responseData.data.data.urls[0], requestData.path);
                 }
-                sendToGopeed(res.data.data.list[0]);
-              }
-            },
-            onerror: function (response) {
-              layer.close(openInfoLayer);
-              layer.close(laysermsg);
-              const errorMessage =
-                JSON.parse(response.responseText).message || '网络错误';
-              swal({
-                text: '发送到Gopeed遇到问题了，请刷新重试即可！！',
-                icon: 'warning',
-              });
-            },
-          });
+              },
+              onerror: function (response) {
+                layer.close(openInfoLayer);
+                layer.close(laysermsg);
+                const errorMessage =
+                  JSON.parse(response.responseText).message || '网络错误';
+                swal({
+                  text: '发送到Gopeed遇到问题了，请刷新重试即可！！',
+                  icon: 'warning',
+                });
+              },
+            });
+          } else {
+            GM_xmlhttpRequest({
+              method: 'POST',
+              url: downloadUrl,
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              data: JSON.stringify(requestData),
+              onload: function (response) {
+                const responseData = JSON.parse(response.responseText);
+                // console.log(responseData);
+                if (responseData.code !== 200) {
+                  layer.close(openInfoLayer);
+                  layer.close(laysermsg);
+                  // swal({
+                  //   text: responseData.msg,
+                  //   icon: 'warning',
+                  // });
+                  init_parse(3);
+                } else {
+                  layer.close(laysermsg);
+                  $('#parseBtn').html('<p>发送到Gopeed</p>');
+                  if (responseData.data.vip) {
+                    wwConfig.url = responseData.data.data.dlink;
+                    wwConfig.ua = responseData.data.data.ua;
+                  } else {
+                    wwConfig.url = responseData.data.dlink;
+                    wwConfig.ua = responseData.data.ua;
+                  }
+                  sendToGopeed(res.data.data.list[0], responseData.path);
+                }
+              },
+              onerror: function (response) {
+                layer.close(openInfoLayer);
+                layer.close(laysermsg);
+                const errorMessage =
+                  JSON.parse(response.responseText).message || '网络错误';
+                swal({
+                  text: '发送到Gopeed遇到问题了，请刷新重试即可！！',
+                  icon: 'warning',
+                });
+              },
+            });
+          }
         } else {
           layer.close(openInfoLayer);
           layer.close(laysermsg);
@@ -703,38 +842,42 @@
         return false;
       })
   }
-  function sendToGopeed(item) {
+  function sendToGopeed(item, fileName) {
+    let download_url = item.url;
+    let data = {
+      req: {
+        url: download_url,
+        extra: {
+          header: {
+            "User-Agent": wwConfig.ua,
+          }
+        }
+      },
+      opt: {
+        extra: {
+          connections: 256,
+        }
+      }
+    }
     fetch(wwConfig.goPeedTaskUrl, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({
-        req:
-        {
-          url: wwConfig.url,
-          extra: {
-            header: {
-              "User-Agent": wwConfig.ua,
-            }
-          }
-        },
-        opt: {
-          extra: {
-            connections: 256,
-          }
-        }
-      }),
+      body: JSON.stringify(data),
     }).then((resp) => resp.json())
       .then((res) => {
         layer.open({
-          content: `请打开 Gopeed 查看 <span style="color:rgba(5,150,105,1);">${item.server_filename}</span> 是否开始下载？未下载成功，先设置IDM/NDM User-Agent:<code>` + wwConfig.ua + `</code>，再复制直链下载！`,
+          content: `请打开 Gopeed 查看 <span style="color:rgba(5,150,105,1);">${fileName}</span> 是否开始下载？未下载成功，先设置IDM/NDM User-Agent:<code>` + wwConfig.ua + `</code>，再复制直链下载！`,
           btn: ['已下载，关闭弹窗', '复制UA', '未下载，复制直链'],
+          // content: `请打开 Gopeed 查看 <span style="color:rgba(5,150,105,1);">${fileName}</span> 是否开始下载？未下载成功，请重试！（暂时只支持 Gopeed 下载！）`,
+          // btn: ['已下载，关闭弹窗', '未下载，复制直链'],
           closeBtn: 0,
           type: 1,
           btn1: function (index, layero, that) {
             layer.close(index);
             $('#parseWxBtn').html('<p>发送到Gopeed</p>');
+            // loadStableCaptcha();
           },
           btn2: function (index, layero, that) {
             GM_setClipboard(wwConfig.ua, "text");
@@ -742,26 +885,31 @@
             return false;
           },
           btn3: function (index, layero, that) {
-            GM_setClipboard(wwConfig.url, "text");
-            layer.msg(`${item.server_filename} 的直链复制成功！`);
+            GM_setClipboard(download_url, "text");
+            layer.msg(`${fileName} 的直链复制成功！`);
             $('#parseWxBtn').html('<p>发送到Gopeed</p>');
+            // loadStableCaptcha();
           }
         });
-        // layer.confirm(`请打开 Gopeed 查看 <span style="color:rgba(5,150,105,1);">${item.server_filename}</span> 是否开始下载？未下载成功，先设置IDM/NDM User-Agent:<code>` + wwConfig.ua + `</code>，再复制直链下载！`,
-        //   {
-        //     btn: ['已下载，关闭弹窗', '未下载，复制直链'],
-        //     closeBtn: 0,
-        //   }, function (index) {
-        //     layer.close(index);
-        //     $('#parseWxBtn').html('<p>发送到Gopeed</p>');
-        //   }, function () {
-        //     GM_setClipboard(wwConfig.url, "text");
-        //     layer.msg(`${item.server_filename} 的直链复制成功！`);
-        //     $('#parseWxBtn').html('<p>发送到Gopeed</p>');
-        //   });
       }).catch(e => {
       })
   }
+
+  // function loadStableCaptcha() {
+  //   GM_xmlhttpRequest({
+  //     method: 'GET',
+  //     url: `${wwConfig.vipUrl}`,
+  //     onload: function (response) {
+        // console.log(response.responseText);
+  //       const data = JSON.parse(response.responseText);
+  //       if (data.status === 'success') {
+  //         $('#captchaImage').attr('src', 'data:image/jpeg;base64,' + data.img);
+  //         GM_setValue('captcha_uuid', data.uuid);
+  //       }
+  //     }
+  //   });
+  // }
+
   setInterval(() => {
     GM_xmlhttpRequest({
       method: 'get',

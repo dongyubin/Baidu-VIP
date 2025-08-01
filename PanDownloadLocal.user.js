@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         文武直链助手-百度网盘在线解析网页直链获取助手
 // @namespace    https://github.com/dongyubin/Baidu-VIP
-// @version      0.9
+// @version      1.0
 // @description  不限制速度的百度网盘SVIP解析直链网页获取助手，支持 Gopeed（一键解析）、IDM、NDM 等多线程极速下载工具
 // @author       DongYubin
 // @homepage     https://fk.wwkejishe.top/buy/23
@@ -16,6 +16,8 @@
 // @grant        GM_addStyle
 // @grant        GM_getResourceText
 // @grant        GM_setClipboard
+// @downloadURL https://update.greasyfork.org/scripts/521641/%E6%96%87%E6%AD%A6%E7%9B%B4%E9%93%BE%E5%8A%A9%E6%89%8B-%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98%E5%9C%A8%E7%BA%BF%E8%A7%A3%E6%9E%90%E7%BD%91%E9%A1%B5%E7%9B%B4%E9%93%BE%E8%8E%B7%E5%8F%96%E5%8A%A9%E6%89%8B.user.js
+// @updateURL https://update.greasyfork.org/scripts/521641/%E6%96%87%E6%AD%A6%E7%9B%B4%E9%93%BE%E5%8A%A9%E6%89%8B-%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98%E5%9C%A8%E7%BA%BF%E8%A7%A3%E6%9E%90%E7%BD%91%E9%A1%B5%E7%9B%B4%E9%93%BE%E8%8E%B7%E5%8F%96%E5%8A%A9%E6%89%8B.meta.js
 // ==/UserScript==
 const layuiCss = GM_getResourceText('layuiCSS');
 GM_addStyle(layuiCss);
@@ -51,7 +53,7 @@ addXMLRequestCallback(function (xhr) {
     if (xhr.readyState == 4 && xhr.status == 200) {
       const url = xhr.responseURL;
       // console.log('拦截返回：', xhr);
-      if (url.includes('https://api.aifenxiang.net.cn/wp/fast/pc/dlink')) {
+      if (url.includes('https://api.gssource.com/wp/fast/pc/dlink')) {
         try {
           const responseData = JSON.parse(xhr.responseText);
           const downloadUrl = responseData.data.data.dlink;
@@ -80,7 +82,7 @@ addXMLRequestCallback(function (xhr) {
           console.error('解析响应时出错: ', e);
         }
       }
-      else if (url.includes('https://api.aifenxiang.net.cn/wp/pc/dlink')) {
+      else if (url.includes('https://api.gssource.com/wp/pc/dlink')) {
         try {
           const responseData = JSON.parse(xhr.responseText);
           wwConfig.downloadUrl = responseData.data.dlink;
