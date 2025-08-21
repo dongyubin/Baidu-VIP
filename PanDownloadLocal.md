@@ -10,7 +10,7 @@ Github By [@dongyubin](https://github.com/dongyubin/Baidu-VIP)
 
 ## 概述 / Overview
 
-只支持在 [文武Download网页版](https://pandown.wangdu.site/) 使用，不支持在百度网盘网页端使用，搭配  [Gopeed](https://pan.quark.cn/s/0b2e9c6e94b0)（[Gopeed 使用教程](https://flowus.cn/wwkejishe/share/c68e3c55-67e5-460f-b937-7727e0378a34?code=BCRWJL)） 使用。
+只支持在 [文武Download网页版](https://pandown.wangdu.site/) 使用，不支持在百度网盘网页端使用，搭配  [Gopeed](https://pan.quark.cn/s/7babffa3960d)（[Gopeed 使用教程](https://flowus.cn/wwkejishe/share/c68e3c55-67e5-460f-b937-7727e0378a34?code=BCRWJL)） 使用。
 
 ## 特别提示 / hot tip
 

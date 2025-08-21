@@ -20,11 +20,11 @@
 
 ## 百度网盘不限速下载工具
 
-未失效方法如下，更新时间：**2025年6月26日**
+未失效方法如下，更新时间：**2025年8月21日**
 
 ### 在线解析网站
 
-获取 [文武Pandownload](https://pandown.wangdu.site/) 的验证码（一次付费，无限制获取验证码，解析次数不变；或者 [购买月卡](https://fk.wwkjs.top/buy/23)（[备用地址](https://fk.wangdu.site/buy/23) 可正常购买，还可使用[（高质量）网盘会员](http://vip.jiufei.com/lin/GI5LG4?refer=1661)）：不限制大小、下载不限速度、不限制解析次数，最快可达 10M+/s）
+获取 [文武Pandownload](https://pandown.wangdu.site/)（必须搭配 [GoPeed](https://pan.quark.cn/s/7babffa3960d)) 使用） 的验证码（一次付费，无限制获取验证码，解析次数不变；或者 [购买月卡](https://fk.wwkjs.top/buy/23)（[备用地址](https://fk.wangdu.site/buy/23) 可正常购买，还可使用[（高质量）网盘会员](http://vip.jiufei.com/lin/GI5LG4?refer=1661)）：不限制大小、下载不限速度、不限制解析次数，最快可达 10M+/s）
 
 [点击获取验证码](https://www.wangdu.site/software/tools/948.html)
 
