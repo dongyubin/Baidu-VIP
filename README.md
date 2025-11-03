@@ -24,11 +24,11 @@
 
 ### 在线解析网站
 
-获取 [文武Pandownload](https://pandown.wangdu.site/)（必须搭配 [GoPeed](https://pan.quark.cn/s/7babffa3960d)) 使用） 的验证码（一次付费，无限制获取验证码，解析次数不变；或者 使用[（高质量）网盘会员](http://vip.jiufei.com/lin/GI5LG4?refer=1661)）：不限制大小、下载不限速度、不限制解析次数，最快可达 10M+/s）
+获取 [文武Pandownload](https://pandown.wangdu.site/)（必须搭配 [GoPeed](https://pan.quark.cn/s/7babffa3960d)) 使用） 的验证码（一次付费，无限制获取验证码，解析次数不变； [购买月卡](https://fk.wwkjs.top/buy/23)（[备用地址](https://fk.wangdu.site/buy/23)）或者 使用[（高质量）网盘会员](http://vip.jiufei.com/lin/GI5LG4?refer=1661)）：不限制大小、下载不限速度、不限制解析次数，最快可达 10M+/s）
 
 [点击获取验证码](https://www.wangdu.site/software/tools/948.html)
 
-- [文武Pandownload](https://pandown.wangdu.site/)（[油猴脚本地址](https://greasyfork.org/zh-CN/scripts/518023-%E6%96%87%E6%AD%A6download-%E7%9B%B4%E9%93%BE%E7%9A%84%E4%BA%91%E7%9B%98%E5%8A%A9%E6%89%8B)（[国内加速地址](https://cn-greasyfork.org/zh-CN/scripts/518023-%E6%96%87%E6%AD%A6download-%E7%9B%B4%E9%93%BE%E7%9A%84%E4%BA%91%E7%9B%98%E5%8A%A9%E6%89%8B)） 搭配百度网盘官网效果更佳、文件单个大小不得超过 3G、[Github开源地址](https://github.com/dongyubin/Baidu-VIP)，百度网盘不限速解析网盘，使用SVIP账号解析），下载速度 10M+/s（ [购买月卡](https://fk.wwkjs.top/buy/23)（还可使用[（高质量）网盘会员](http://vip.jiufei.com/lin/GI5LG4?refer=1661)）：不限制大小、速度，最快可达 10M+/s）百度网盘下载如何加速？ [Gopeed下载使用教程](https://flowus.cn/share/c68e3c55-67e5-460f-b937-7727e0378a34?code=BCRWJL)
+- [文武Pandownload](https://pandown.wangdu.site/)（[油猴脚本地址](https://greasyfork.org/zh-CN/scripts/518023-%E6%96%87%E6%AD%A6download-%E7%9B%B4%E9%93%BE%E7%9A%84%E4%BA%91%E7%9B%98%E5%8A%A9%E6%89%8B)（[国内加速地址](https://cn-greasyfork.org/zh-CN/scripts/518023-%E6%96%87%E6%AD%A6download-%E7%9B%B4%E9%93%BE%E7%9A%84%E4%BA%91%E7%9B%98%E5%8A%A9%E6%89%8B)） 搭配百度网盘官网效果更佳、文件单个大小不得超过 3G、[Github开源地址](https://github.com/dongyubin/Baidu-VIP)，百度网盘不限速解析网盘，使用SVIP账号解析），下载速度 10M+/s（ [购买月卡](https://fk.wwkjs.top/buy/23)（[备用地址](https://fk.wangdu.site/buy/23)）还可使用[（高质量）网盘会员](http://vip.jiufei.com/lin/GI5LG4?refer=1661)）：不限制大小、速度，最快可达 10M+/s）百度网盘下载如何加速？ [Gopeed下载使用教程](https://flowus.cn/share/c68e3c55-67e5-460f-b937-7727e0378a34?code=BCRWJL)
 
   ![文武Pandownload下载速度展示](https://cdn.wwkejishe.top/wp-cdn-02/2024/202411171326300.webp)
 
@@ -88,12 +88,6 @@ Chrome 需要先安装 [Chrome扩展：篡改猴测试版](https://www.crxsoso.c
 
 ### 客户端
 
-- [game1024/OpenSpeedy](https://github.com/game1024/OpenSpeedy)（[国内网盘下载](https://pan.quark.cn/s/70c9e3e4526a)）（一步也不能错，请仔细查看教程）
-  - 先打开百度网盘，不要开始下载
-  - 接着启动 OpenSpeedy，保持默认的 1 倍速
-  - 系统进程处搜索 baidu，把所有百度网盘相关的进程（可以看图标）都勾选上
-  - 然后在百度网盘中，点击下载你需要的文件
-  - 切换到 OpenSpeedy 中，把倍速调整至 10－15 倍左右（不建议调太高，容易导致下载出错）
 - 使用下面直链下载软件来下载，亲测 `RPC+Motrix`的方式可以下载百度网盘链接，速度 100k 以内。
 - [迅雷](https://www.xunlei.com/) 12.4.新版本（[下载地址](https://pan.quark.cn/s/180e29dbf242)、 [Windows备用下载地址](https://down.sandai.net/thunder11/XunLeiWebSetup12.4.4.3740xl11.exe)、[手机端下载地址](https://mobile.xunlei.com/)），新增第三方网盘下载功能，该功能面向所有用户免费开放。用户完成第三方网盘授权后，即可在迅雷客户端内直接查看、下载所有资源。同时支持 MP4、MKV、MOV 等主流视频格式的原画云播，无需跳转其他播放器，即可实现“资源浏览-在线播放-本地下载”的无缝衔接。
   - 主流网盘直连：通过网盘开放平台，可直接添加百度网盘、阿里云盘等大众常用平台。用户仅需在迅雷客户端内完成官方授权，即可一键调用迅雷下载资源，无需反复切换多平台账号，操作流程大幅简化。
@@ -180,6 +174,16 @@ PS：软件只适用于 Windows
 6. 查看速度，我这里用的是：火绒安全 - 流量监控，以后只要开着 Cheat Engine，就会一直以这个速度下载
 
    ![下载速度效果图](https://b2.wwkejishe.top/WP-CDN-02/2023/202303201606643.webp)
+
+### OpenSpeedy
+
+~~[game1024/OpenSpeedy](https://github.com/game1024/OpenSpeedy)（[国内网盘下载](https://pan.quark.cn/s/70c9e3e4526a)）（一步也不能错，请仔细查看教程）~~
+
+- 先打开百度网盘，不要开始下载
+- 接着启动 OpenSpeedy，保持默认的 1 倍速
+- 系统进程处搜索 baidu，把所有百度网盘相关的进程（可以看图标）都勾选上
+- 然后在百度网盘中，点击下载你需要的文件
+- 切换到 OpenSpeedy 中，把倍速调整至 10－15 倍左右（不建议调太高，容易导致下载出错）
 
 ### 手机端
 
