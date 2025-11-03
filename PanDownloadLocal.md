@@ -2,15 +2,15 @@
 
 🛒网盘极速下载VIP账号：[立即前往](https://fk.wangdu.site/buy/23)（[备用地址](https://fk.wwkjs.top/buy/23)）
 
-[百度网盘稳定解析方式](https://flowus.cn/wwkejishe/share/9e5a3fa4-a9eb-4706-9cf0-8eec0d4740c1)
+[百度网盘稳定解析方式](https://help.wwkejishe.top/baidu/baidu-wangpan-wending)
 
 Github By [@dongyubin](https://github.com/dongyubin/Baidu-VIP)
 
-[脚本使用教程](https://flowus.cn/wwkejishe/share/c68e3c55-67e5-460f-b937-7727e0378a34?code=BCRWJL)
+[脚本使用教程](https://help.wwkejishe.top/baidu/baidu-wangpan-download)
 
 ## 概述 / Overview
 
-只支持在 [文武Download网页版](https://pandown.wangdu.site/) 使用，不支持在百度网盘网页端使用，搭配  [Gopeed](https://pan.quark.cn/s/7babffa3960d)（[Gopeed 使用教程](https://flowus.cn/wwkejishe/share/c68e3c55-67e5-460f-b937-7727e0378a34?code=BCRWJL)） 使用。
+只支持在 [文武Download网页版](https://pandown.wangdu.site/) 使用，不支持在百度网盘网页端使用，搭配  [Gopeed](https://pan.quark.cn/s/7babffa3960d)（[Gopeed 使用教程](https://help.wwkejishe.top/baidu/baidu-wangpan-download)） 使用。
 
 ## 特别提示 / hot tip
 
