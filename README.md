@@ -20,11 +20,11 @@
 
 ## 百度网盘不限速下载工具
 
-未失效方法如下，更新时间：**2025年10月15日**
+未失效方法如下，更新时间：**2025年11月3日**
 
 ### 在线解析网站
 
-获取 [文武Pandownload](https://pandown.wangdu.site/)（必须搭配 [GoPeed](https://pan.quark.cn/s/7babffa3960d)) 使用） 的验证码（一次付费，无限制获取验证码，解析次数不变；或者 [购买月卡](https://fk.wwkjs.top/buy/23)（[备用地址](https://fk.wangdu.site/buy/23) 可正常购买，还可使用[（高质量）网盘会员](http://vip.jiufei.com/lin/GI5LG4?refer=1661)）：不限制大小、下载不限速度、不限制解析次数，最快可达 10M+/s）
+获取 [文武Pandownload](https://pandown.wangdu.site/)（必须搭配 [GoPeed](https://pan.quark.cn/s/7babffa3960d)) 使用） 的验证码（一次付费，无限制获取验证码，解析次数不变；或者 使用[（高质量）网盘会员](http://vip.jiufei.com/lin/GI5LG4?refer=1661)）：不限制大小、下载不限速度、不限制解析次数，最快可达 10M+/s）
 
 [点击获取验证码](https://www.wangdu.site/software/tools/948.html)
 
@@ -56,6 +56,7 @@ Chrome 需要先安装 [Chrome扩展：篡改猴测试版](https://www.crxsoso.c
 
 | 油猴脚本名称                                                 | 使用后说明                                                   | 油猴脚本介绍                                                 |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| [百度网盘不限速下载-度盘极空间](https://greasyfork.org/zh-CN/scripts/492047-百度网盘不限速下载-度盘极空间) | 需要关注公众号，发送关键词：`暗号`                           | 一个百度网盘不限速下载助手, 免会员、突破限速，畅享高速下载不限速下载，小白也能轻松学会。这个插件会给你带来惊喜，快来体验吧！支持IDM、Aria2、Motrix加速下载。适配 Chrome✅，Edge✅，FireFox✅官方浏览器 长期维护，放心食用 |
 | ~~[百度网盘直连助手🚀-ED4m](https://greasyfork.org/zh-CN/scripts/492047)~~ | 10G内文件，需要先关注公众号：`懵懂大师兄`，发送关键词：`暗号`，获取口令 | 一个百度网盘直链获取助手,支持IDM、Aria2、Motrix加速下载。适配 Chrome✔，Edge✔，FireFox✔官方浏览器 |
 | ~~[百度网盘不限制下载-神速Down](https://greasyfork.org/zh-CN/scripts/480255)~~ | 已失效，（限制最大文件：3G）：需要先关注公众号：`乐玩AO`，发送关键词：`免费白嫖`，获取口令 | 不限制速度下载的百度网盘解析脚本，无视黑号，拥有IDM/Aria2/Motrix三种方式任意体验极速下载！支持Microsoft Edge、Google Chrome、Firefox等浏览器 面向所有网友免费交流学习使用，更多功能正在完善中... |
 | ~~[（改）网盘直链下载助手](https://greasyfork.org/zh-CN/scripts/449291)~~ | 需要安装Chrome插件+油猴脚本，浏览器还无法识别 Chrome插件     | 一个基于 JavaScript 的网盘文件下载地址获取工具，支持 百度网盘/阿里云盘/天翼云盘/迅雷云盘/夸克网盘/移动网盘 六大网盘 |
@@ -65,8 +66,6 @@ Chrome 需要先安装 [Chrome扩展：篡改猴测试版](https://www.crxsoso.c
 | ~~[百度网盘千千下载助手](https://greasyfork.org/zh-CN/scripts/463171)~~ | 需要关注公众号                                               |                                                              |
 | ~~[KubeDown](https://greasyfork.org/zh-CN/scripts/463832)~~  |                                                              |                                                              |
 | ~~[TT助手](https://greasyfork.org/zh-CN/scripts/465078)~~    | 需要关注公众号                                               | 简单无限制的百度网盘解析脚本，无视黑号，免SVIP，免浏览器扩展，支持IDM、NDM、Aria、Motrix等多种工具下载。 |
-
-
 
 ### 游戏试玩（官方稳定）
 
